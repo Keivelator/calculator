@@ -1,7 +1,12 @@
+let firstNumber = [];
+let secondNumber = [];
+let displayedNumber = [];
+
 const numberButtons = document.querySelectorAll('.number');
 numberButtons.forEach(numberButton => {
     numberButton.addEventListener('click', () => {
-
+        firstNumber.push(numberButton.id);
+        
     })
 });
 
