@@ -35,6 +35,8 @@ equalButton.addEventListener('click', () => {
     displayBottom.textContent = result;
 })
 
+const resetButton = document.querySelector('.reset');
+resetButton.addEventListener('click', () => reset())
 
 
 
@@ -57,4 +59,15 @@ function operate (num1, num2, opt) {
         case '%':
             return num1 % num2;
         }
+}
+
+function reset () {
+    currentNumber = '';
+    operator = '';
+    firstNumber = '';
+    result = '';
+    displayBottom.textContent = '';
+    displayTop.textContent = '';
+    let resettedArray = [currentNumber, operator, firstNumber, result];
+    console.log(resettedArray);
 }
