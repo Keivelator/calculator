@@ -1,3 +1,7 @@
+* {
+    font-family: sans-serif;
+}
+
 html {
     background-color: coral;
 }
@@ -14,19 +18,29 @@ h1 {
 .calculator {
     display: flex;
     flex-direction: column;
-    width: 500px;
+    width: 400px;
     background-color: antiquewhite;
 }
 
 .display {
+    display: flex;
+    flex-direction: column;
     height: 100px;
+}
+
+.display-bottom {
+    font-size: 30px;
+    display: flex;
+    align-items: flex-end;
+    flex: 3;
+    align-self: flex-end; 
+    justify-self: flex-end;
 }
 
 .buttons-row {
     display: flex;
     height: 70px;
     background-color: brown;
-    /* border: 1px solid white; */
 }
 
 .button {
@@ -36,7 +50,11 @@ h1 {
     align-items: center;
     flex: 1;
     background-color: grey;
-    border: 1px solid white;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
 }
 
 .number {

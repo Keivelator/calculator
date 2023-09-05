@@ -34,12 +34,17 @@ const equalButton = document.querySelector('.equal');
 equalButton.addEventListener('click', () => {
     equalButtonClicked = true;
     result = operate(Number(firstNumber), Number(currentNumber), operator);
-    console.log(result);
     displayBottom.textContent = result;
 })
 
 const resetButton = document.querySelector('.reset');
 resetButton.addEventListener('click', () => reset())
+
+const backSpaceButton = document.querySelector('.back-space');
+backSpaceButton.addEventListener('click', () =>{
+    displayTop.textContent = displayTop.textContent.slice(0, -1);
+    currentNumber = currentNumber.slice(0, -1);
+})
 
 
 
@@ -71,7 +76,5 @@ function reset () {
     result = '';
     displayBottom.textContent = '';
     displayTop.textContent = '';
-    let resettedArray = [currentNumber, operator, firstNumber, result];
-    console.log(resettedArray);
     equalButtonClicked = false;
 }
