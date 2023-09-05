@@ -1,0 +1,44 @@
+html {
+    background-color: coral;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    background-color: antiquewhite;
+}
+
+.display {
+    height: 100px;
+}
+
+.buttons-row {
+    display: flex;
+    height: 70px;
+    background-color: brown;
+    /* border: 1px solid white; */
+}
+
+.button {
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: grey;
+    border: 1px solid white;
+}
+
+.number {
+    background-color: white;
+}
