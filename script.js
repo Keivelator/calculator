@@ -2,6 +2,8 @@ let currentNumber = '';
 let operator;
 let firstNumber;
 let result;
+let equalButtonClicked = false;
+
 
 //Target UI Elements
 const displayTop = document.querySelector('.display-top');
@@ -10,6 +12,7 @@ const displayBottom = document.querySelector('.display-bottom');
 const numberButtons = document.querySelectorAll('.number');
 numberButtons.forEach(numberButton => {
     numberButton.addEventListener('click', () => {
+        if (equalButtonClicked) reset();
         displayTop.textContent += numberButton.id;
         currentNumber += numberButton.id;
     })
@@ -21,7 +24,6 @@ operatorButtons.forEach(operatorButton => {
         // to add to firstNumber
         firstNumber = currentNumber;
         currentNumber = '';
-        console.log('first number is ${firstNumber}');
         // ---------------------------------
         operator = operatorButton.textContent;
         displayTop.textContent += ` ${operatorButton.textContent} `;
@@ -30,6 +32,7 @@ operatorButtons.forEach(operatorButton => {
 
 const equalButton = document.querySelector('.equal');
 equalButton.addEventListener('click', () => {
+    equalButtonClicked = true;
     result = operate(Number(firstNumber), Number(currentNumber), operator);
     console.log(result);
     displayBottom.textContent = result;
@@ -70,4 +73,5 @@ function reset () {
     displayTop.textContent = '';
     let resettedArray = [currentNumber, operator, firstNumber, result];
     console.log(resettedArray);
+    equalButtonClicked = false;
 }
